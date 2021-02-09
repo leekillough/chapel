@@ -16,6 +16,11 @@ import sys
 import timeit
 import multiprocessing
 
+if ! os.path.exists('ANNOTATIONS.yaml'):
+    test = os.path.join(os.path.dirname(__file__), '..', '..', 'test');
+    sys.stderr.write("Warning: No tests found in current working directory\n"
+                     "cd'ing to " + test + "\n")
+    os.chdir(test)
 chplenv_dir = os.path.join(os.path.dirname(__file__), '..', 'chplenv')
 sys.path.insert(0, os.path.abspath(chplenv_dir))
 
