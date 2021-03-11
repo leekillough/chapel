@@ -507,7 +507,7 @@ void yypstate_delete (yypstate *ps);
       (Current).first_column = (Rhs)[1].first_column;                     \
       (Current).last_line    = (Rhs)[N].last_line;                        \
       (Current).last_column  = (Rhs)[N].last_column;                      \
-      (Current).comment      = NULL;                                      \
+      (Current).comment      = YY_NULLPTR;                                \
                                                                           \
       if ((Current).first_line)                                           \
         yystartlineno = (Current).first_line;                             \
@@ -6662,7 +6662,7 @@ yyreduce:
   case 43:
 #line 573 "chapel.ypp" /* yacc.c:1663  */
     {
-      (yyval.pmodsymbol) = buildModule((yyvsp[0].pch), currentModuleType, NULL, yyfilename, (yyvsp[-3].b), (yyvsp[-2].b), (yylsp[-3]).comment);
+      (yyval.pmodsymbol) = buildModule((yyvsp[0].pch), currentModuleType, YY_NULLPTR, yyfilename, (yyvsp[-3].b), (yyvsp[-2].b), (yylsp[-3]).comment);
       // store previous module name in order to restore it once we're
       // done with this module in module_decl_stmt below.  Ultimately,
       // we will need to store a stack of module names in order to
